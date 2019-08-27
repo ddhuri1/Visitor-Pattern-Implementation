@@ -1,0 +1,7 @@
+CurlLib file, also known as libcurl Shared Library, is commonly associated with The cURL library.
+libcurl is highly portable, it builds and works identically on numerous platforms, including Solaris.
+In order to complete this step, you must run the Command Prompt administrator.
+Introduced by IBM in 1956,[6] HDDs became the dominant secondary storage device
+The file and the associated Symantec Network Access Control software was developed by SymantecTECH Corporation.
+Hard disk is an electro-mechanical data storage device that uses magnetic storage to store and retrieve digital information
+Internet of Things (IoT) are pervasive computing systems consisting of smartsensor embedded in physical environments.

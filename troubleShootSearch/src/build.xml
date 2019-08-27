@@ -1,0 +1,67 @@
+<project name="troubleShootSearch" default="compile_all" basedir="..">
+
+  <property name="BUILD.compiler"       value="modern"/>
+  <property name="src"                  value="src"/>
+  <property name="BUILD"                value="src/BUILD"/>
+  <property name="classes"              value="${BUILD}/classes"/>
+  <!--<property name="tarball"              value="troubleShootSearch"/>-->
+
+  <target name="all" depends="compile_all"/>
+
+  <target name="compile_all"
+          depends="troubleShootSearch"/>
+
+  <target name="clean">
+       <delete dir="${BUILD}"/>
+  </target>
+
+  <!-- Prepare target directories -->
+  <target name="prepare">
+        <mkdir dir="${BUILD}"/>
+        <mkdir dir="${classes}"/>
+  </target>
+
+ <target name="jar">
+        <mkdir dir="${BUILD}/jar"/>
+        <jar destfile="${BUILD}/jar/troubleShootSearch.jar" basedir="${BUILD}/classes">
+            <manifest>
+                <attribute name="Main-Class" value="troubleShootSearch.driver.Driver"/>
+            </manifest>
+        </jar>
+    </target>
+
+  <!-- ** means all subdirectories as well -->
+  <!-- * means all files in the current directory -->
+  <!-- for just java files use *.java -->
+
+  <target name="troubleShootSearch" depends="prepare">
+    <javac includeantruntime="false" srcdir="${src}"
+	           includes="troubleShootSearch/**"
+           excludes="**/package.html"
+           destdir="${classes}"
+           classpath="${classes}"
+           debug="on"
+           optimize="on"
+           deprecation="off"/>
+  </target>
+
+<target name="run" depends="jar">
+        <java jar="${BUILD}/jar/troubleShootSearch.jar"  fork="true">
+        <arg value="${arg0}"/>
+		<arg value="${arg1}"/>
+        <arg value="${arg2}"/>
+		<arg value="${arg3}"/>
+        </java>	
+    </target>
+	
+<target name="compress">
+        <tar destfile="../../devina_dhuri_assign_5.tar.gz" basedir="../.."
+		compression="gzip"/>
+  </target>
+  
+  <target name="tarball">
+    <antcall target="clean"></antcall>
+    <antcall target="compress"></antcall>
+  </target>
+
+</project>

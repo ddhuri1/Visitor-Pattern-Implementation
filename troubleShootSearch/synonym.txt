@@ -1,0 +1,12 @@
+commands:instructions
+directory:folder
+PD:Portable Drive
+administrator:admin
+CPU:processor
+disk:drive
+huge:large
+PC:personal computers
+systems:computing
+roles:characteristics
+devices:gadgets
+show:demonstrates
